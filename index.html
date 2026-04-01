@@ -27,9 +27,10 @@
       </a>
 
       <ul class="nav-links nav-links--right">
-        <li><a href="#">Nederlands</a></li>
-        <li><a href="#">English</a></li>
-        <li><a href="#contact" class="btn btn--primary">Get in touch</a></li>
+        <li><a href="/nl/" class="nav-lang">Nederlands</a></li>
+        <li class="nav-lang-divider">|</li>
+        <li><span class="nav-lang nav-lang--active">English</span></li>
+        <li><a href="https://www.equinoxip.com/" target="_blank" rel="noopener" class="btn btn--primary">Client login</a></li>
       </ul>
     </nav>
   </header>
@@ -257,19 +258,28 @@
         <form action="https://formspree.io/f/xwvwbqzd" method="POST" class="contact-form">
 
           <div class="form-field">
-            <label for="name">Name</label>
+            <label for="name">Name*</label>
             <input type="text" id="name" name="name" required>
           </div>
 
-          <div class="form-field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="email">Email*</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-field">
+              <label for="mobile">Mobile number</label>
+              <input type="tel" id="mobile" name="mobile">
+            </div>
           </div>
 
           <div class="form-field">
-            <label for="message">Message</label>
+            <label for="message">Message*</label>
             <textarea id="message" name="message" rows="6" placeholder="Type your message..." required></textarea>
           </div>
+
+          <p class="form-note">* Required field</p>
 
           <div class="form-submit">
             <button type="submit" class="btn btn--primary">Send us a message</button>
