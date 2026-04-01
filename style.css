@@ -39,6 +39,9 @@ body {
   text-decoration: none;
   cursor: pointer;
   transition: opacity 0.2s;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .btn--primary {
@@ -88,6 +91,14 @@ body {
   gap: 2rem;
 }
 
+.nav-links--right {
+  gap: 0.75rem;
+}
+
+.nav-links--right li:last-child {
+  margin-left: 1rem;
+}
+
 .nav-links a {
   text-decoration: none;
   color: var(--color-text);
@@ -100,6 +111,31 @@ body {
   color: var(--color-accent);
 }
 
+.nav-links .btn--primary {
+  color: #fff;
+}
+
+.nav-links .btn--primary:hover {
+  color: #fff;
+  opacity: 0.85;
+}
+
+.nav-links .nav-lang {
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.nav-links .nav-lang--active {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-lang-divider {
+  color: var(--color-text);
+  opacity: 0.4;
+}
+
 /* ─── NAV LOGO ───────────────────────────────────────── */
 .nav-logo {
   display: flex;
@@ -110,26 +146,14 @@ body {
 }
 
 .nav-logo__mark {
-  height: 48px;
+  height: 32px;
   width: auto;
   transition: height 0.4s ease;
-}
-
-.nav-logo__wordmark {
-  height: 16px;
-  width: auto;
-  opacity: 1;
-  transition: opacity 0.3s ease, height 0.3s ease;
 }
 
 /* collapsed state — applied by JS on scroll */
 .site-header.scrolled .nav-logo__mark {
   height: 32px;
-}
-
-.site-header.scrolled .nav-logo__wordmark {
-  opacity: 0;
-  height: 0;
 }
 
 /* ─── HERO LOGO ──────────────────────────────────────── */
@@ -146,16 +170,17 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
 }
 
 .hero-logo__mark {
-  height: 120px;
+  height: 80px;
   width: auto;
 }
 
 .hero-logo__wordmark {
-  height: 28px;
+  height: 36px;
   width: auto;
 }
 
@@ -192,7 +217,7 @@ body {
 
 .hero-headline {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 400;
   color: var(--color-text);
   margin-bottom: 1.5rem;
@@ -232,7 +257,7 @@ body {
 /* ─── SHARED SECTION STYLES ──────────────────────────── */
 .section-heading {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 400;
   color: var(--color-text);
   text-align: center;
@@ -468,7 +493,7 @@ body {
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
 .contact-item {
@@ -505,7 +530,7 @@ body {
 
 .contact-address {
   font-size: 0.95rem;
-  line-height: 1.7;
+  line-height: 1.4;
   color: var(--color-text);
   margin-bottom: 0.5rem;
 }
@@ -527,12 +552,11 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  border: 1px solid #e0e0d8;
 }
 
 /* form */
 .contact-form-wrap {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -560,7 +584,7 @@ body {
   padding: 0.75rem 1rem;
   border: 1px solid #d0d0c8;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: var(--color-bg);
   font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--color-text);
@@ -576,6 +600,19 @@ body {
 
 .form-submit {
   text-align: center;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-note {
+  font-size: 0.8rem;
+  color: var(--color-text);
+  opacity: 0.6;
+  text-align: right;
 }
 
 /* ─── FOOTER ─────────────────────────────────────────── */
@@ -596,17 +633,18 @@ body {
 .footer-logo {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
 .footer-logo__mark {
-  height: 80px;
+  height: 40px;
   width: auto;
 }
 
 .footer-logo__wordmark {
-  height: 20px;
+  height: 32px;
   width: auto;
 }
 
@@ -734,6 +772,12 @@ body {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
   }
 }
 
