@@ -151,9 +151,19 @@ body {
   transition: height 0.4s ease;
 }
 
+/* ─── NAV LOGO HIDDEN STATE ──────────────────────────── */
+.nav-logo--hidden .nav-logo__mark {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
 /* collapsed state — applied by JS on scroll */
 .site-header.scrolled .nav-logo__mark {
   height: 32px;
+}
+
+.site-header.scrolled .nav-logo--hidden .nav-logo__mark {
+  opacity: 1;
 }
 
 /* ─── HAMBURGER BUTTON ───────────────────────────────── */
@@ -275,16 +285,6 @@ body {
 .hero-logo__wordmark {
   height: 36px;
   width: auto;
-}
-
-/* ─── NAV LOGO HIDDEN STATE ──────────────────────────── */
-.nav-logo--hidden .nav-logo__mark {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.site-header.scrolled .nav-logo--hidden .nav-logo__mark {
-  opacity: 1;
 }
 
 /* ─── HERO ───────────────────────────────────────────── */
@@ -836,6 +836,14 @@ body {
 @media (max-width: 1024px) {
   .nav-logo__mark {
     height: 24px;
+  }
+
+  .nav-logo--hidden .nav-logo__mark {
+    opacity: 0;
+  }
+
+  .site-header.scrolled .nav-logo--hidden .nav-logo__mark {
+    opacity: 1;
   }
 
   .nav-links {
