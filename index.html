@@ -5,19 +5,285 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Patentales · protecting software and AI · Ghent · BE</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- your sections go here -->
-<p>This is a test section</p>
+  <!-- NAVBAR -->
+  <header class="site-header" id="site-header">
+    <nav class="navbar">
+      <ul class="nav-links nav-links--left">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#why">Why us?</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-  <form action="https://formspree.io/f/xwvwbqzd" method="POST">
-    <input type="text" name="name" placeholder="Your name" required>
-    <input type="email" name="email" placeholder="Your email" required>
-    <textarea name="message" placeholder="Your message" required></textarea>
-    <button type="submit">Send</button>
-  </form>
+      <a href="#" class="nav-logo nav-logo--hidden" id="nav-logo">
+        <img src="assets/images/logo-mark.svg" alt="Patentales" class="nav-logo__mark">
+      </a>
+
+      <ul class="nav-links nav-links--right">
+        <li><a href="#">Nederlands</a></li>
+        <li><a href="#">English</a></li>
+        <li><a href="#contact" class="btn btn--primary">Get in touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-logo">
+      <img src="assets/images/logo-mark.svg" alt="Patentales" class="hero-logo__mark">
+      <img src="assets/images/logo-wordmark.svg" alt="Patentales" class="hero-logo__wordmark">
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-headline">Stories of growth.</h1>
+      <p class="hero-subtext">
+        We help you patent your inventions in software and AI.<br>
+        With this specialization, we are unique in Belgium.<br>
+        You find our office in the center of Ghent, the AI capital of Belgium.
+      </p>
+      <a href="#contact" class="btn btn--primary">Let's talk</a>
+    </div>
+
+    <div class="hero-waves"></div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+
+      <div class="services-header">
+        <h2 class="section-heading">We protect your technology</h2>
+        <p class="services-subtext">
+          We specialize in patenting cutting-edge software innovations.<br>
+          Our deep technical expertise in these complex fields is what sets us apart.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-item">
+          <img src="assets/images/icon-ai.svg" alt="" class="service-icon">
+          <h3 class="service-title">Artificial intelligence and machine learning</h3>
+          <p class="service-desc">Neural networks and algorithms that learn and adapt to solve problems.</p>
+        </div>
+
+        <div class="service-item">
+          <img src="assets/images/icon-lock.svg" alt="" class="service-icon">
+          <h3 class="service-title">Blockchain and distributed systems</h3>
+          <p class="service-desc">Decentralized architectures and ledger technologies built for trust and transparency.</p>
+        </div>
+
+        <div class="service-item">
+          <img src="assets/images/icon-energy.svg" alt="" class="service-icon">
+          <h3 class="service-title">Hardware and electronics</h3>
+          <p class="service-desc">Semiconductors, circuits, and physical components that make technology real.</p>
+        </div>
+
+        <div class="service-item">
+          <img src="assets/images/icon-lightbulb.svg" alt="" class="service-icon">
+          <h3 class="service-title">Photonics and optical systems</h3>
+          <p class="service-desc">Light-based innovations and optical precision engineered for the future.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team" id="team">
+    <div class="container">
+
+      <div class="team-header">
+        <h2 class="section-heading">Our team</h2>
+        <p class="team-subtext">Experienced professionals with deep roots in technology and patent law.</p>
+      </div>
+
+      <div class="team-grid">
+
+        <div class="team-member">
+          <img src="assets/images/wouter.jpg" alt="Wouter Rogiest" class="team-photo">
+          <h3 class="team-name">Wouter Rogiest</h3>
+          <p class="team-role">Founder & Patent Attorney</p>
+          <p class="team-bio">Ten years navigating patent landscapes across Europe and beyond. Professor.</p>
+          <div class="team-links">
+            <a href="https://www.linkedin.com/in/wrogiest/" target="_blank" rel="noopener" aria-label="Wouter on LinkedIn">
+              <img src="assets/images/icon-linkedin.svg" alt="" class="team-link-icon">
+            </a>
+            <a href="mailto:wouter.rogiest@patentales.be" aria-label="Email Wouter">
+              <img src="assets/images/icon-mail.svg" alt="" class="team-link-icon">
+            </a>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <img src="assets/images/lynn.jpg" alt="Lynn Deruddere" class="team-photo">
+          <h3 class="team-name">Lynn Deruddere</h3>
+          <p class="team-role">Paralegal</p>
+          <p class="team-bio">IP professional supporting innovation for nearly a decade.</p>
+          <div class="team-links">
+            <a href="https://www.linkedin.com/in/lynn-deruddere-464870a5/" target="_blank" rel="noopener" aria-label="Lynn on LinkedIn">
+              <img src="assets/images/icon-linkedin.svg" alt="" class="team-link-icon">
+            </a>
+            <a href="mailto:lynn.deruddere@patentales.be" aria-label="Email Lynn">
+              <img src="assets/images/icon-mail.svg" alt="" class="team-link-icon">
+            </a>
+          </div>
+        </div>
+
+        <div class="team-member">
+          <img src="assets/images/tim.jpg" alt="Tim Van Cauteren" class="team-photo">
+          <h3 class="team-name">Tim Van Cauteren</h3>
+          <p class="team-role">Patent Attorney</p>
+          <p class="team-bio">Quantum precision. Strategic patents. PhD.</p>
+          <div class="team-links">
+            <a href="https://www.linkedin.com/in/tim-van-cauteren-a990b830/" target="_blank" rel="noopener" aria-label="Tim on LinkedIn">
+              <img src="assets/images/icon-linkedin.svg" alt="" class="team-link-icon">
+            </a>
+            <a href="mailto:tim.vancauteren@patentales.be" aria-label="Email Tim">
+              <img src="assets/images/icon-mail.svg" alt="" class="team-link-icon">
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- WE'RE HIRING -->
+      <div class="hiring">
+        <h2 class="section-heading">We're hiring</h2>
+        <p class="hiring-subtext">Ever considered a job in patent industry?</p>
+        <a href="https://www.linkedin.com/company/patentales"
+          target="_blank"
+          rel="noopener"
+          class="btn btn--outline">View our open position</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2 class="cta-banner__heading">Ready to protect your innovation</h2>
+      <p class="cta-banner__subtext">Let's discuss your patent strategy and find the right path forward for your technology.</p>
+      <a href="#contact" class="btn btn--primary">Let's get in touch</a>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why-us" id="why">
+    <div class="container">
+
+      <h2 class="section-heading">Why us?</h2>
+
+      <div class="why-us__content">
+        <p>Most clients are <strong>startups and scale-ups</strong> who need help in
+        blocking copycats and strengthening their market position.</p>
+
+        <p>Often we are called in because of our specialization in
+        <strong>software and AI</strong>, a domain where it is sometimes said that
+        patenting is not possible. Think again!</p>
+
+        <p>Patentales is registered service provider for the <strong>SME e-wallet</strong>,
+        supporting SMEs with patent advice and training.</p>
+
+        <p>Patentales offers IP advice via the <strong>prediagnostic service</strong>.</p>
+      </div>
+
+    </div>
+  </section>
+  <!-- remaining sections will go here -->
+
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
+  <p>test</p>
 
   <script src="script.js"></script>
 </body>
