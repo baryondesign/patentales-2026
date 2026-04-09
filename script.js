@@ -53,3 +53,51 @@ fetch('../assets/team.json')
     `).join('');
   })
   .catch(err => console.error('Could not load team data:', err));
+
+  // load quotes
+fetch('../assets/quotes.json')
+  .then(res => res.json())
+  .then(quotes => {
+    const track = document.getElementById('quotes-track');
+    const dotsContainer = document.getElementById('quotes-dots');
+    let current = 0;
+
+    // build slides
+    track.innerHTML = quotes.map(q => `
+      <div class="quote-slide">
+        <img src="${q.photo}" alt="${q.name}" class="quote-photo">
+        <div class="quote-content">
+          <div class="quote-stars">${'★'.repeat(q.stars)}</div>
+          <p class="quote-text">"${q.quote}"</p>
+          <div class="quote-attribution">
+            <div>
+              <p class="quote-name">${q.name}</p>
+              <p class="quote-role">${q.role[lang]}</p>
+            </div>
+            <div class="quote-divider"></div>
+            <img src="${q.logo}" alt="${q.logoAlt}" class="quote-logo">
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    // build dots
+    dotsContainer.innerHTML = quotes.map((_, i) => `
+      <button class="quotes-dot ${i === 0 ? 'is-active' : ''}"
+              aria-label="Go to quote ${i + 1}"></button>
+    `).join('');
+
+    const dots = dotsContainer.querySelectorAll('.quotes-dot');
+
+    function goTo(index) {
+      current = (index + quotes.length) % quotes.length;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach(d => d.classList.remove('is-active'));
+      dots[current].classList.add('is-active');
+    }
+
+    document.getElementById('quotes-prev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('quotes-next').addEventListener('click', () => goTo(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+  })
+  .catch(err => console.error('Could not load quotes:', err));
