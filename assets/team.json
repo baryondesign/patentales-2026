@@ -11,7 +11,7 @@
         },
         "photo": "../assets/images/wouter.jpg",
         "linkedin": "https://www.linkedin.com/in/wouterrogiest",
-        "email": "wouter@patentales.be"
+        "email": "wouter.rogiest@patentales.com"
     },
     {
         "name": "Lynn Deruddere",
@@ -25,7 +25,7 @@
         },
         "photo": "../assets/images/lynn.jpg",
         "linkedin": "https://www.linkedin.com/in/lynn-deruddere-464870a5/",
-        "email": "lynn@patentales.be"
+        "email": "lynn.deruddere@patentales.com"
     },
     {
         "name": "Tim Van Cauteren",
@@ -39,6 +39,6 @@
         },
         "photo": "../assets/images/tim.jpg",
         "linkedin": "https://www.linkedin.com/in/tim-van-cauteren-a990b830/",
-        "email": "tim@patentales.be"
+        "email": "tim.vancauteren@patentales.com"
     }
 ]
