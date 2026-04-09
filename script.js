@@ -61,9 +61,12 @@ fetch('../assets/quotes.json')
     const track = document.getElementById('quotes-track');
     const dotsContainer = document.getElementById('quotes-dots');
     let current = 0;
+    let isTransitioning = false;
 
-    // build slides
-    track.innerHTML = quotes.map(q => `
+    // build slides + clone of first slide at the end
+    const allSlides = [...quotes, quotes[0]];
+
+    track.innerHTML = allSlides.map(q => `
       <div class="quote-slide">
         <img src="${q.photo}" alt="${q.name}" class="quote-photo">
         <div class="quote-content">
@@ -81,7 +84,7 @@ fetch('../assets/quotes.json')
       </div>
     `).join('');
 
-    // build dots
+    // build dots (only for real slides, not the clone)
     dotsContainer.innerHTML = quotes.map((_, i) => `
       <button class="quotes-dot ${i === 0 ? 'is-active' : ''}"
               aria-label="Go to quote ${i + 1}"></button>
@@ -89,15 +92,43 @@ fetch('../assets/quotes.json')
 
     const dots = dotsContainer.querySelectorAll('.quotes-dot');
 
-    function goTo(index) {
-      current = (index + quotes.length) % quotes.length;
-      track.style.transform = `translateX(-${current * 100}%)`;
+    function updateDots(index) {
       dots.forEach(d => d.classList.remove('is-active'));
-      dots[current].classList.add('is-active');
+      dots[index % quotes.length].classList.add('is-active');
     }
 
-    document.getElementById('quotes-prev').addEventListener('click', () => goTo(current - 1));
-    document.getElementById('quotes-next').addEventListener('click', () => goTo(current + 1));
+    function goTo(index, animate = true) {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      if (animate) {
+        track.style.transition = 'transform 0.5s ease';
+      } else {
+        track.style.transition = 'none';
+      }
+
+      current = index;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      updateDots(current);
+    }
+
+    // after transition to clone, silently snap to real first slide
+    track.addEventListener('transitionend', () => {
+      if (current === quotes.length) {
+        goTo(0, false);
+      }
+      isTransitioning = false;
+    });
+
+    document.getElementById('quotes-prev').addEventListener('click', () => {
+      if (current === 0) return; // no wrap backwards
+      goTo(current - 1);
+    });
+
+    document.getElementById('quotes-next').addEventListener('click', () => {
+      goTo(current + 1);
+    });
+
     dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
   })
   .catch(err => console.error('Could not load quotes:', err));
