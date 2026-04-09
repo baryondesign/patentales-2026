@@ -17,14 +17,14 @@
         "name": "Lynn Deruddere",
         "role": {
             "en": "Paralegal",
-            "nl": "Juridisch medewerker"
+            "nl": "Paralegal"
         },
         "bio": {
             "en": "IP professional supporting innovation for nearly a decade.",
             "nl": "IP professional die al bijna een decennium innovaties ondersteunt."
         },
         "photo": "../assets/images/lynn.jpg",
-        "linkedin": "https://www.linkedin.com/in/lynnderuddere",
+        "linkedin": "https://www.linkedin.com/in/lynn-deruddere-464870a5/",
         "email": "lynn@patentales.be"
     },
     {
@@ -38,7 +38,7 @@
             "nl": "Kwantumprecisie. Strategische octrooien. PhD."
         },
         "photo": "../assets/images/tim.jpg",
-        "linkedin": "https://www.linkedin.com/in/timvancauteren",
+        "linkedin": "https://www.linkedin.com/in/tim-van-cauteren-a990b830/",
         "email": "tim@patentales.be"
     }
 ]
