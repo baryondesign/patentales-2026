@@ -68,7 +68,7 @@ fetch('../assets/quotes.json')
         <img src="${q.photo}" alt="${q.name}" class="quote-photo">
         <div class="quote-content">
           <div class="quote-stars">${'★'.repeat(q.stars)}</div>
-          <p class="quote-text">"${q.quote}"</p>
+          <p class="quote-text">"${q.quote[lang]}"</p>
           <div class="quote-attribution">
             <div>
               <p class="quote-name">${q.name}</p>
