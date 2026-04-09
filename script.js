@@ -54,19 +54,17 @@ fetch('../assets/team.json')
   })
   .catch(err => console.error('Could not load team data:', err));
 
-  // load quotes
+
+//load quotes
 fetch('../assets/quotes.json')
   .then(res => res.json())
   .then(quotes => {
     const track = document.getElementById('quotes-track');
     const dotsContainer = document.getElementById('quotes-dots');
     let current = 0;
-    let isTransitioning = false;
 
-    // build slides + clone of first slide at the end
-    const allSlides = [...quotes, quotes[0]];
-
-    track.innerHTML = allSlides.map(q => `
+    // build slides
+    track.innerHTML = quotes.map(q => `
       <div class="quote-slide">
         <img src="${q.photo}" alt="${q.name}" class="quote-photo">
         <div class="quote-content">
@@ -84,7 +82,7 @@ fetch('../assets/quotes.json')
       </div>
     `).join('');
 
-    // build dots (only for real slides, not the clone)
+    // build dots
     dotsContainer.innerHTML = quotes.map((_, i) => `
       <button class="quotes-dot ${i === 0 ? 'is-active' : ''}"
               aria-label="Go to quote ${i + 1}"></button>
@@ -94,41 +92,52 @@ fetch('../assets/quotes.json')
 
     function updateDots(index) {
       dots.forEach(d => d.classList.remove('is-active'));
-      dots[index % quotes.length].classList.add('is-active');
+      dots[index].classList.add('is-active');
     }
 
-    function goTo(index, animate = true) {
-      if (isTransitioning) return;
-      isTransitioning = true;
-
-      if (animate) {
-        track.style.transition = 'transform 0.5s ease';
-      } else {
-        track.style.transition = 'none';
-      }
-
-      current = index;
+    function goTo(index) {
+      current = (index + quotes.length) % quotes.length;
       track.style.transform = `translateX(-${current * 100}%)`;
       updateDots(current);
     }
 
-    // after transition to clone, silently snap to real first slide
-    track.addEventListener('transitionend', () => {
-      if (current === quotes.length) {
-        goTo(0, false);
+    function goToAnimated(index) {
+      const next = (index + quotes.length) % quotes.length;
+
+      // if wrapping forward (last -> first), animate to a virtual slide
+      // then snap back
+      if (current === quotes.length - 1 && next === 0) {
+        // temporarily add a clone slide at the end
+        const clone = track.children[0].cloneNode(true);
+        track.appendChild(clone);
+        track.style.transition = 'transform 0.5s ease';
+        track.style.transform = `translateX(-${quotes.length * 100}%)`;
+
+        setTimeout(() => {
+          // snap back to real first slide
+          track.style.transition = 'none';
+          track.style.transform = `translateX(0%)`;
+          current = 0;
+          updateDots(0);
+          // remove the clone
+          track.removeChild(clone);
+          // re-enable transition after snap
+          setTimeout(() => {
+            track.style.transition = 'transform 0.5s ease';
+          }, 50);
+        }, 500);
+      } else {
+        current = next;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        updateDots(current);
       }
-      isTransitioning = false;
-    });
+    }
 
-    document.getElementById('quotes-prev').addEventListener('click', () => {
-      if (current === 0) return; // no wrap backwards
-      goTo(current - 1);
-    });
+    // set initial transition
+    track.style.transition = 'transform 0.5s ease';
 
-    document.getElementById('quotes-next').addEventListener('click', () => {
-      goTo(current + 1);
-    });
-
+    document.getElementById('quotes-prev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('quotes-next').addEventListener('click', () => goToAnimated(current + 1));
     dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
   })
   .catch(err => console.error('Could not load quotes:', err));
