@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Wouter Rogiest",
+        "role": "Founder & Patent Attorney",
+        "bio": "Ten years navigating patent landscapes across Europe and beyond. Professor.",
+        "photo": "../assets/images/wouter.jpg",
+        "linkedin": "https://www.linkedin.com/in/wouterrogiest",
+        "email": "wouter@patentales.be"
+    },
+    {
+        "name": "Lynn Deruddere",
+        "role": "Paralegal",
+        "bio": "IP professional supporting innovation for nearly a decade.",
+        "photo": "../assets/images/lynn.jpg",
+        "linkedin": "https://www.linkedin.com/in/lynnderuddere",
+        "email": "lynn@patentales.be"
+    },
+    {
+        "name": "Tim Van Cauteren",
+        "role": "Patent Attorney",
+        "bio": "Quantum precision. Strategic patents. PhD.",
+        "photo": "../assets/images/tim.jpg",
+        "linkedin": "https://www.linkedin.com/in/timvancauteren",
+        "email": "tim@patentales.be"
+    }
+]
