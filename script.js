@@ -27,6 +27,9 @@ mobileMenu.querySelectorAll('a').forEach(link => {
   });
 });
 
+// detect language from URL path
+const lang = window.location.pathname.includes('/nl/') ? 'nl' : 'en';
+
 // load team members
 fetch('../assets/team.json')
   .then(res => res.json())
@@ -36,8 +39,8 @@ fetch('../assets/team.json')
       <div class="team-member">
         <img src="${member.photo}" alt="${member.name}" class="team-photo">
         <h3 class="team-name">${member.name}</h3>
-        <p class="team-role">${member.role}</p>
-        <p class="team-bio">${member.bio}</p>
+        <p class="team-role">${member.role[lang]}</p>
+        <p class="team-bio">${member.bio[lang]}</p>
         <div class="team-links">
           <a href="${member.linkedin}" target="_blank" rel="noopener" aria-label="${member.name} on LinkedIn">
             <img src="../assets/images/icon-linkedin.svg" alt="" class="team-link-icon">

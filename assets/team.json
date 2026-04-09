@@ -1,24 +1,42 @@
 [
     {
         "name": "Wouter Rogiest",
-        "role": "Founder & Patent Attorney!!",
-        "bio": "Ten years navigating patent landscapes across Europe and beyond. Professor.",
+        "role": {
+            "en": "Founder & Patent Attorney",
+            "nl": "Oprichter & Octrooigemachtigde"
+        },
+        "bio": {
+            "en": "Ten years navigating patent landscapes across Europe and beyond. Professor.",
+            "nl": "Tien jaar ervaring in het navigeren van octrooilandschappen in Europa en daarbuiten. Professor."
+        },
         "photo": "../assets/images/wouter.jpg",
         "linkedin": "https://www.linkedin.com/in/wouterrogiest",
         "email": "wouter@patentales.be"
     },
     {
         "name": "Lynn Deruddere",
-        "role": "Paralegal",
-        "bio": "IP professional supporting innovation for nearly a decade.",
+        "role": {
+            "en": "Paralegal",
+            "nl": "Juridisch medewerker"
+        },
+        "bio": {
+            "en": "IP professional supporting innovation for nearly a decade.",
+            "nl": "IP professional die al bijna een decennium innovaties ondersteunt."
+        },
         "photo": "../assets/images/lynn.jpg",
         "linkedin": "https://www.linkedin.com/in/lynnderuddere",
         "email": "lynn@patentales.be"
     },
     {
         "name": "Tim Van Cauteren",
-        "role": "Patent Attorney",
-        "bio": "Quantum precision. Strategic patents. PhD.",
+        "role": {
+            "en": "Patent Attorney",
+            "nl": "Octrooigemachtigde"
+        },
+        "bio": {
+            "en": "Quantum precision. Strategic patents. PhD.",
+            "nl": "Kwantumprecisie. Strategische octrooien. PhD."
+        },
         "photo": "../assets/images/tim.jpg",
         "linkedin": "https://www.linkedin.com/in/timvancauteren",
         "email": "tim@patentales.be"
