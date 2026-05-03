@@ -148,9 +148,11 @@ body {
 .nav-logo__mark {
   height: 32px;
   width: auto;
-  image-rendering: crisp-edges;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* ─── NAV LOGO HIDDEN STATE ──────────────────────────── */
