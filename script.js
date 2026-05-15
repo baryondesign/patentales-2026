@@ -9,7 +9,7 @@ window.addEventListener('scroll', () => {
   } else {
     header.classList.remove('scrolled');
   }
-});
+}, { passive: true });
 
 // hamburger toggle
 hamburger.addEventListener('click', () => {
